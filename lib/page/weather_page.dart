@@ -58,7 +58,7 @@ class _WeatherPageState extends State<WeatherPage> {
       case 'clear':
         return 'assets/sunny.json';
       default:
-        return 'assets/sunny.json'; // Provide a default value for unknown conditions
+        return 'assets/sunny.json';
     }
   }
 
@@ -76,7 +76,7 @@ class _WeatherPageState extends State<WeatherPage> {
       case 'clear':
         return 'Good for fishing!';
       default:
-        return 'Fish with caution!'; // Provide a default value for unknown conditions
+        return 'Fish with caution!';
     }
   }
 
@@ -85,7 +85,6 @@ class _WeatherPageState extends State<WeatherPage> {
     return MaterialApp(
       theme: ThemeData(
         fontFamily: 'ProximaNova',
-        // Add other theme configurations...
       ),
       home: Scaffold(
         body: Center(
@@ -95,7 +94,6 @@ class _WeatherPageState extends State<WeatherPage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      // First Container
                       Container(
                         width: 342,
                         decoration: BoxDecoration(
@@ -117,7 +115,6 @@ class _WeatherPageState extends State<WeatherPage> {
                           padding: const EdgeInsets.all(10),
                           child: Row(
                             children: [
-                              // Temperature and Location
                               Expanded(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -142,8 +139,7 @@ class _WeatherPageState extends State<WeatherPage> {
                                   ],
                                 ),
                               ),
-                              SizedBox(width: 10), // Added spacing
-                              // Animation and Condition
+                              SizedBox(width: 10),
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(20),
                                 child: Lottie.asset(
@@ -157,62 +153,181 @@ class _WeatherPageState extends State<WeatherPage> {
                         ),
                       ),
 
-                      SizedBox(height: 36), // Distance between containers
+                      SizedBox(height: 36,),
 
-                      // Second Container with "Fish Finder" text and "Explore" button
-                      Stack(
-                        children: [
-                          Container(
-                            width: 340,
-                            height: 519,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage('assets/fishfinder.png'),
-                                fit: BoxFit.cover,
-                              ),
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                          ),
-                          Positioned(
-                            top: 377,
-                            left: 0,
-                            right: 0,
-                            child: Center(
-                              child: Text(
-                                'Fish Finder',
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(left: 35),
+                              width: 340,
+                              height: 519,  // Adjust this height as needed
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('assets/fishfinder.png'),
+                                  fit: BoxFit.cover,
                                 ),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Stack(
+                                children: [
+                                  Positioned(
+                                    top: 377,
+                                    left: 0,
+                                    right: 0,
+                                    child: Center(
+                                      child: Text(
+                                        'Fish Finder',
+                                        style: TextStyle(
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    top: 434,
+                                    left: 25,
+                                    child: ElevatedButton(
+                                      onPressed: () {
+                                        // Add your Explore button functionality here
+                                      },
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Color(0xFFFFAB19),
+                                      onPrimary: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(16.0),
+                                      ),
+                                      fixedSize: Size(289, 55),
+                                    ),
+                                    child: Text(
+                                      'Explore',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ),
+                                  ),
+                                ],
                               ),
                             ),
-                          ),
-                          Positioned(
-                            top: 434,
-                            left: 25,
-                            child: ElevatedButton(
-                              onPressed: () {
-                                // Add your Explore button functionality here
-                              },
-                              style: ElevatedButton.styleFrom(
-                                primary: Color(0xFFFFAB19),
-                                onPrimary: Colors.white,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(16.0),
+                            SizedBox(width: 28),
+                            Container(
+                              width: 340,
+                              height: 519,  // Adjust this height as needed
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('assets/Marketplace.png'),
+                                  fit: BoxFit.cover,
                                 ),
-                                fixedSize: Size(289, 55),
+                                borderRadius: BorderRadius.circular(20),
                               ),
-                              child: Text(
-                                'Explore',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w700,
-                                ),
+                              child: Stack(
+                                children: [
+                                  Positioned(
+                                    top: 377,
+                                    left: 0,
+                                    right: 0,
+                                    child: Center(
+                                      child: Text(
+                                        'Fish Finder',
+                                        style: TextStyle(
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    top: 434,
+                                    left: 25,
+                                    child: ElevatedButton(
+                                      onPressed: () {
+                                        // Add your Explore button functionality here
+                                      },
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Color(0xFF196DFF),
+                                      onPrimary: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(16.0),
+                                      ),
+                                      fixedSize: Size(289, 55),
+                                    ),
+                                    child: Text(
+                                      'Explore',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ),
+                                  ),
+                                ],
                               ),
                             ),
-                          ),
-                        ],
+                            SizedBox(width: 28),
+                            Container(
+                              margin: EdgeInsets.only(right: 35),
+                              width: 340,
+                              height: 519,  // Adjust this height as needed
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('assets/Community.png'),
+                                  fit: BoxFit.cover,
+                                ),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Stack(
+                                children: [
+                                  Positioned(
+                                    top: 377,
+                                    left: 0,
+                                    right: 0,
+                                    child: Center(
+                                      child: Text(
+                                        'Fish Finder',
+                                        style: TextStyle(
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    top: 434,
+                                    left: 25,
+                                    child: ElevatedButton(
+                                      onPressed: () {
+                                        // Add your Explore button functionality here
+                                      },
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Color(0xFF196DFF),
+                                      onPrimary: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(16.0),
+                                      ),
+                                      fixedSize: Size(289, 55),
+                                    ),
+                                    child: Text(
+                                      'Explore',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
